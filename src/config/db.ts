@@ -20,4 +20,7 @@ const connectDb = async () => {
         process.exit(1); // ager error aya toh server chalakar kya fayda wo stop ho jayga esa
     }
 }
+
 export default connectDb
+
+
