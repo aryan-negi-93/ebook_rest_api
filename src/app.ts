@@ -4,9 +4,12 @@ import express, { NextFunction, Response, Request } from "express";
 import createHttpError, { HttpError } from "http-errors";
 import globalErrorHandler from "./middlewares/globalerrorHandler";
 import userRouter from "./user/userRouter";
+import bodyParser from "body-parser";
 
+const app = express();
 
-const app = express()
+app.use(express.json());
+
 
 // Routes 
 
