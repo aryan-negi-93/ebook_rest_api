@@ -1,6 +1,7 @@
 import { error } from "console";
 import { NextFunction, Request, Response } from "express";
 import createHttpError from "http-errors";
+import bcrypt from "bcrypt";
 import userMOdel from "./userMOdel";
 
 const createUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -23,10 +24,12 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
         return next(error)
     }
 
+    // password hash
+
+    // secrat -> ssssss , secrat -> ssssss   same has h na bane salt se hota h salt rendon string hote h jesme mix karte h 
+
+    const HasedPassword = await bcrypt.hash(password, 10)
     // process-logic
-
-
-
 
     // response 
 
